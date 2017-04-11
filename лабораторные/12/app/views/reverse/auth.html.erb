@@ -1,0 +1,11 @@
+<h1>Authorization</h1>
+<p>New login will throw existing session!</p>
+<%= form_tag("/reverse/login", :method => "get") do %>
+<%= label_tag("Login :") %>
+<%= text_field_tag(:l) %> <br/>
+<%= label_tag("Password :") %>
+<%= text_field_tag(:p) %> <br/>
+<br/>
+<%= link_to 'Create an account', '/users/new' %><br/>
+<%= submit_tag("Process") %>
+<% end %>

@@ -1,0 +1,17 @@
+<h1>Results</h1>
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Binary code</th>
+    <th>Reversed binary code</th>
+    <th>Processed number</th>
+  </tr>
+  <% @result.each do |arr| %>
+  <tr>
+    <% arr.each do |el| %>
+    <td><%= el %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "Repeat calculation", "/reverse/in" %>

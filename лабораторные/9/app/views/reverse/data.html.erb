@@ -1,0 +1,9 @@
+<h1>Data input</h1>
+<p>Reverse#data in app/views/reverse/data.html.erb</p>
+<%= form_tag("/reverse/show.json", :method => "get", :remote => true, :id => 'form') do %>
+<%= label_tag("Value :") %>
+<%= text_field_tag(:val) %> <br/>
+<br/>
+<%= submit_tag("Process") %>
+<% end %>
+<table id='result'></table>

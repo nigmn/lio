@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+   <title>Resulting strings</title>
+   <description>A parts of divided resulting array</description>
+   <link><%= link_to "RSS feed", params.merge(:format => :rss), :class => "feed_link" %></link>
+   <pubDate><%= DateTime.now %></pubDate>
+   <% @result.each do |arr| %>
+   <item>
+     <title>Information fragment</title>
+<description>
+<% if @err %>
+<%= 'An processing error because of an input mistake' %>
+<% else %>
+<%= 'One of the many. Number '+arr[0]+' (binary code: '+arr[1]+') transformed in '+arr[3]+', reversed binary code: '+arr[2] %>
+<% end %>
+</description>
+     <link><%= link_to "RSS feed", params.merge(:format => :rss), :class => "feed_link" %></link>
+     <pubDate><%= DateTime.now %></pubDate>
+   </item>
+   <% end %>
+  </channel>
+</rss>

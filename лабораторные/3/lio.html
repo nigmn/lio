@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+<head>
+    <style type="text/css">
+        #s1:hover{
+            background: red;
+        }
+		#s2:hover{
+            background: orange;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>kor</title>
+    <script src="ar.js"></script>
+</head>
+<body>
+    <form name="FORM">
+        Название товара: <input type="text" id="nam" /><br/>
+        Стоимость: <input type="text" id="cena"  /><br/>		
+        <input type="button" value="Добавить" id="s1" onclick="createTable();">
+    </form>
+    <script type="text/javascript">
+        myId='';
+        var newTable=document.createElement("table");
+        newTable.setAttribute("id","itemTable");
+        newTable.setAttribute("width","500");
+        newTable.setAttribute("height","50");
+        newTable.setAttribute("border","1");
+        var newRow=newTable.insertRow(0);
+        var newCell=newRow.insertCell(0);
+        newCell.setAttribute("id","00");
+        newCell.setAttribute("width","250");
+        newCell.setAttribute("height","0");
+        newCell.innerHTML="Название товара";
+        newCell=newRow.insertCell(1);
+        newCell.setAttribute("id","01");
+        newCell.setAttribute("width","250");
+        newCell.setAttribute("height","50");
+        newCell.innerHTML="Цена";
+        document.body.appendChild(newTable);
+    </script>
+ Для добавления в корзину нажмите на название товара.<br/>
+ <button id="s2" onclick="calculate()" >Сумма</button> 
+</body>
+</html>

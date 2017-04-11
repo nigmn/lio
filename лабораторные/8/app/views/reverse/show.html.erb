@@ -1,0 +1,20 @@
+<h1>Results</h1>
+<p>Reverse#show in app/views/reverse/show.html.erb</p>
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Binary code</th>
+    <th>Reversed binary code</th>
+    <th>Processed number</th>
+  </tr>
+  <% @result.each do |arr| %>
+  <tr>
+    <% arr.each do |el| %>
+    <td><%= el %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "Repeat calculation", "/reverse/data" %> Using link as "/reverse/data"
+</br>
+<%= link_to "Repeat calculation", :reverse_data %> Using link as :reverse_data

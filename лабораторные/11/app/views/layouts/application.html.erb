@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	table,td,tr {border: 1px solid black; text-aligh: center; padding: 2px;}
+  body {background: #ADD8E6}
+  h2 {margin-bottom: 1px;}
+  h3 {margin-top: 1px;}
+  h4 {margin: 0px;}
+  p {margin: 1px; margin-bottom: 15px;}
+</style>
+<head>
+  <title>Практикум 7</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to "Main page", "/reverse/index" %> |
+<%= link_to "Calculate", "/reverse/data" %> |
+<%= link_to "Base", "/reverse/base" %> |
+<%= link_to "Last used record", "/reverse/last" %></br>
+<%= yield %>
+
+</body>
+</html>

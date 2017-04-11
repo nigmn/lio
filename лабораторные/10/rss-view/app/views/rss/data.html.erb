@@ -1,0 +1,10 @@
+<h1>Data and query</h1>
+<p>Input the nubmer and select response type</p>
+<%= form_tag("/rss/transform", :method => "get", :name => "inputform") do %>
+<%= label_tag("Value :") %>
+<%= text_field_tag(:val) %> <br/>
+<br/>
+<%= submit_tag("RSS", :onclick => 'inputform.action="/rss/transform.rss"') %>
+<%= submit_tag("HTML", :onclick => 'inputform.action="/rss/transform"') %>
+<% end %>
+

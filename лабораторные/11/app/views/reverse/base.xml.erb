@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+   <title>Application base</title>
+   <description>Exciting story of useless calculations</description>
+   <pubDate><%= DateTime.now %></pubDate>
+   <% @result.each do |i| %>
+   <item>
+     <title>Number <%= i.or %></title>
+     <description>
+     <%="Binary code #{i.bin}, reversed binary #{i.rev}, transformation result #{i.res}, last update: #{i.updated_at}" %>
+     </description>
+     <pubDate><%= i.updated_at %></pubDate>
+   </item>
+   <% end %>
+  </channel>
+</rss>

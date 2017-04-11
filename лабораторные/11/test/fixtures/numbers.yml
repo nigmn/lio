@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  or: 1
+  bin: MyString
+  rev: MyString
+  res: 1
+
+two:
+  or: 1
+  bin: MyString
+  rev: MyString
+  res: 1

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=windows-1251" />
+<title>Document</title>
+<script>
+function tree(elem, v) {
+'use strict';
+var str = '', str0 = '&nbsp', str1 = '', val;
+for (var i = 0; i < v; i++) str1 += str0;
+for (i = 0; i < elem.childNodes.length; i++) {
+val = elem.childNodes[i];
+console.log(val);
+switch (val.nodeType) {
+case 1:
+str += str1 + val.tagName + ': ' + '<br />';
+str += tree(val, v+1);
+break;
+case 3:
+str += str1 + 'text: ' + val.textContent+ '<br />';
+break;}
+}
+return str;
+}
+document.addEventListener("DOMContentLoaded", function () {
+document.querySelector('#context').innerHTML = tree(document.body,0);
+}, false);
+</script>
+</head>
+<body>
+ <div>
+   div 1
+    <div>
+     div 2
+       <div> 
+         div v 2 divaxx
+       </div>
+     </div>
+ </div>
+<div>
+ otdel div secciya 2
+</div>
+<div>
+div 3
+</div>
+<div id="context"></div>
+</body>
+</html>

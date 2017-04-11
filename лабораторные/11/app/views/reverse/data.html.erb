@@ -1,0 +1,8 @@
+<h1>Calculate</h1>
+<p>Data input: input a number and get the result</p>
+<%= form_tag("/reverse/show", :method => "get") do %>
+<%= label_tag("Value :") %>
+<%= text_field_tag(:val) %> <br/>
+<br/>
+<%= submit_tag("Process") %>
+<% end %>

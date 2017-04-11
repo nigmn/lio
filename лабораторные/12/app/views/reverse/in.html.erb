@@ -1,0 +1,8 @@
+<h1>Data input</h1>
+<%= form_tag("/reverse/out", :method => "get") do %>
+<%= label_tag("Value :") %>
+<%= text_field_tag(:val) %> <br/>
+<br/>
+<%= submit_tag("Process") %>
+<% end %>
+<%= link_to 'Login again', '/' %>
