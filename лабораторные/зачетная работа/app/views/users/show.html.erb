@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<table align = "left" class = "block" border = "1px">
+<tr>
+<td>
+<p>
+  <strong>Логин:</strong>
+  <%= @user.login %>
+</p>
+
+<p>
+  <strong>Пароль:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>Статус:</strong>
+  <%= @user.role %>
+</p>
+</td>
+<td>
+<% if logged_in? %>
+<%= link_to 'Изменить данные', controller: "users", action: "edit" %>
+<br>
+<br>
+<%= link_to 'Удалить аккаунт', controller: "users", action: "destroy" %>
+<% end %>
+</td>
+</tr>
+</table>
+<strong>История заказов</strong>
+<table align = "center" class = "block" border = "1px" width = "300px">
+<tr>
+<th>Номер заказа</th>
+<th>Дата</th>
+<th>Заказ</th>
+  <th>Стоимость</th>
+  <th>Статус</th>
+</tr>
+  <% y = Order.where(user_id: current_user.id).find_each do |x| %>
+<tr>
+  <td><%=  x.id %></td>
+  <td><%= x.created_at %></td>
+  <td><%= x.content %></td>
+  <td><%= x.total %></td>
+  <td><%= x.status %></td>
+</tr>
+   <% end %>
+</table>

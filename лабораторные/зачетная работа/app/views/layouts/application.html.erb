@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pchelka</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+      <div align="center" class="main_div">
+        <a href="http://localhost:3000/main_page/main"><%= image_tag 'pchela.jpg', width: 95, :class=>"image_main" %> </a>
+        <h2 style="float : left;">Кафетерий Пчелка</h2>
+        <br /><br /><br />
+        <header class="header_div">
+          <div align = "center">
+            <nav class="navigation">
+              <ul class="ul_inline">
+                <li><%= link_to 'Главная', controller: "main_page", action: "main" %></li>
+                <li><%= link_to 'Продукция', controller: "products", action: "index" %></li>
+                <li><%= link_to 'Контакты', controller: "main_page", action: "contacts" %></li>
+				<li><%= link_to 'Адреса', controller: "main_page", action: "adress" %></li>
+                <% if !logged_in? %>
+                <li><%= link_to 'Войти', controller: "session", action: "new" %></li>
+				<% else %>
+				<% if is_admin? %>
+				<li><%= link_to 'Заказы', controller: "products", action: "view_orders" %></li>
+				<% end %>
+				<li><%= link_to 'Личный кабинет', "/users/show/#{session[:current_user_id]}" %></li>
+				<li><%= link_to 'Выйти', controller: "session", action: "destroy" %></li>
+				<% end %>
+              </ul>
+            </nav>
+          </div>
+        </header>
+         <div class="center_div" align="center">
+          <%= yield %>
+        </div>
+    </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "main" %>
+<br>
+<table align = "center" class = "block">
+<tr>
+<td>
+<%= form_tag({controller: "users", action: "update"}, method: "post") do %>
+  <%= label_tag(:login, "Логин:") %>
+  <%= text_field_tag(:login) %>
+<br>    
+  <%= label_tag(:password, "Пароль:") %>
+  <%= text_field_tag(:password) %>
+<br>
+<br>
+  <%= submit_tag("Изменить данные") %>
+<% end %>
+</td>
+</tr>
+<tr>
+<td>
+<p><%= notice %></p>
+</td>
+</tr>
+</table>

@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "main" %>
+<br>
+<table align = "center" class = "block">
+<tr>
+<td>
+<%= form_tag("/session/create", method: "post") do %>
+  <%= label_tag(:login, "Логин:") %>
+  <%= text_field_tag(:login) %>
+<br>    
+  <%= label_tag(:password, "Пароль:") %>
+  <%= password_field_tag(:password) %>
+<br>
+<%= link_to 'Регистрация', controller: "users", action: "new" %>
+<br>
+  <%= submit_tag("Войти") %>
+<% end %>
+</td>
+</tr>
+<tr>
+<td>
+<p><%= notice %></p>
+</td>
+</tr>
+</table>
